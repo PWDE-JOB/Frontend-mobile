@@ -165,8 +165,17 @@ const DashBoard = () => {
         <Pressable onPress={() => router.push('/inbox')} style={({ pressed }) => [styles.navItem, pressed && { transform: [{ scale: 0.96 }], opacity: 0.8 }]}>
           <Text>👥</Text>
         </Pressable>
-        <TouchableOpacity style={styles.navItem}><Text>🏠</Text></TouchableOpacity>
-        <TouchableOpacity style={styles.navItem}><Text>≡</Text></TouchableOpacity>
+
+        <Pressable onPress={() => router.push('/notification')} style={({ pressed }) => [styles.navItem, pressed && { transform: [{ scale: 0.96 }], opacity: 0.8 }]}> 
+
+        <Text>🏠</Text>
+
+        </Pressable>
+
+        <Pressable onPress={() => router.push('/Settings')} style={({ pressed }) => [styles.navItem, pressed && { transform: [{ scale: 0.96 }], opacity: 0.8 }]} >
+          <Text>≡</Text>
+        </Pressable>
+        
       </View>
     </View>
   );

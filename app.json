@@ -1,11 +1,11 @@
 {
   "expo": {
     "scheme": "jam",
-    "name": "FrontEndFinal",
+    "name": "PWD RECRUITMENT APP",
     "slug": "FrontEndFinal",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "icon": "./assets/PWD.png",
     "userInterfaceStyle": "light",
     "newArchEnabled": true,
     "splash": {
@@ -19,12 +19,12 @@
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#ffffff"
+        "backgroundColor": "#f3f2ef"
       },
       "edgeToEdgeEnabled": true
     },
     "web": {
-      "favicon": "./assets/favicon.png"
+      "favicon": "./assets/PWD.png"
     },
     "plugins": [
       "expo-router"

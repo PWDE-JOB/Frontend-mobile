@@ -36,19 +36,16 @@ const Fav = () => {
 
   return (
     <View style={styles.container}>
-      {/* Back Button */}
-      <Pressable
-        onPress={() => router.back()}
-        style={({ pressed }) => [
-          styles.backButton,
-          pressed && { opacity: 0.7, transform: [{ scale: 0.96 }] },
-        ]}
-      >
-        <Text style={styles.backText}>← Back</Text>
-      </Pressable>
+          <View style={styles.header}>
+                    <TouchableOpacity onPress={() => router.back()} style={styles.backButton}>
+                      <Text style={styles.backText}>← Back</Text>
+                    </TouchableOpacity>
+                  <Text style={styles.headerText}>LIKED JOBS</Text>
 
-      {/* Page Title */}
-      <Text style={styles.header}>LIKED JOBS</Text>
+    </View>
+                
+
+
 
       {/* List of Favorite Job Cards */}
       <ScrollView contentContainerStyle={styles.list}>

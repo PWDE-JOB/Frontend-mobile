@@ -22,10 +22,7 @@ const SignUp = () => {
 
   // Handle sign-up button press
   const handleSignUp = () => {
-    if (!name || !email || !password) {
-      alert('Please fill all fields');
-      return;
-    }
+    
 
     console.log('Registering:', name, email, password);
 

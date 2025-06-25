@@ -2,17 +2,25 @@ import { StyleSheet } from 'react-native';
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    backgroundColor: '#b4d9d3',
-    paddingTop: 40,
-    paddingHorizontal: 20,
-  },
-  header: {
-    fontSize: 22,
+   flex: 1,
+    backgroundColor: '#b2d8d8',
+    },  
+headerText: {
+    color: '#000',
+    fontSize: 18,
     fontWeight: 'bold',
-    color: '#333',
-    marginBottom: 16,
     alignSelf: 'center',
+    flex: 1,
+    textAlign: 'center',
+    marginRight: 30,},
+
+    header: {
+     backgroundColor: '#6cbba6',
+    paddingVertical: 12,
+    paddingHorizontal: 16,
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
   },
   list: {
     paddingBottom: 20,
@@ -93,6 +101,13 @@ backText: {
   fontWeight: 'bold',
   color: '#333',
 },
+headerBar: {    
+    backgroundColor: '#6cbba6',
+    paddingVertical: 12,
+    paddingHorizontal: 16,
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',}
 
 });
 

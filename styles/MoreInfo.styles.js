@@ -1,185 +1,147 @@
 import { StyleSheet } from 'react-native';
 
-export default StyleSheet.create({
-  root: {
-    fontFamily: 'Montserrat',
-    backgroundColor: '#e4e9e9',
-    color: '#ffffff',
-    fontSize: 16,
-    lineHeight: 24,
+const styles = StyleSheet.create({
+  // General Layout
+  container: {
     flex: 1,
+    backgroundColor: '#f3f2ef',
     alignItems: 'center',
-    paddingTop: 68,
-  },
-
-  nav: {
-    position: 'absolute',
-    top: 0,
-    left: 0,
-    right: 0,
-    height: 64,
-    backgroundColor: '#3d9c9c',
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'space-between',
-    paddingHorizontal: 32,
-    zIndex: 100,
-    elevation: 5,
-  },
-
-  logo: {
-    fontWeight: '800',
-    fontSize: 24,
-    color: '#1c6262',
-    flexDirection: 'row',
-    alignItems: 'center',
-  },
-
-  logoImage: {
-    height: 90,
-    width: 85,
-    resizeMode: 'contain',
-  },
-
-  navLinks: {
-    flexDirection: 'row',
-    fontWeight: '400',
-    fontSize: 16,
-    color: '#ffffff',
-  },
-
-  mainContainer: {
-    width: '100%',
-    paddingHorizontal: 32,
-    paddingTop: 64,
-    alignItems: 'center',
-  },
-
-  headerSection: {
-    maxWidth: 640,
-    alignItems: 'center',
-    marginBottom: 64,
-  },
-
-  headerTitle: {
-    fontWeight: '800',
-    fontSize: 48,
-    marginBottom: 16,
-    color: '#445d5d',
-    lineHeight: 52,
-    textAlign: 'center',
-  },
-
-  headerSubtitle: {
-    color: '#88a7a7',
-    fontSize: 18,
-    textAlign: 'center',
-  },
-
-  formCard: {
-    backgroundColor: '#3d9c9c',
-    padding: 32,
-    borderRadius: 12,
-    width: '100%',
-    maxWidth: 1000,
-  },
-
-  formGroup: {
-    marginBottom: 16,
-  },
-
-  label: {
-    fontWeight: '300',
-    marginBottom: 8,
-    color: '#1e252a',
-    fontSize: 16,
-  },
-
-  input: {
-    fontFamily: 'Montserrat',
-    fontSize: 16,
-    paddingVertical: 12,
-    paddingHorizontal: 16,
-    borderWidth: 1.5,
-    borderColor: '#d1d5db',
-    borderRadius: 12,
-    color: '#445d5d',
-    backgroundColor: 'white',
-  },
-
-  textarea: {
-    minHeight: 140,
-    textAlignVertical: 'top',
-  },
-
-  jobTypeGroup: {
-    flexDirection: 'row',
-    flexWrap: 'wrap',
-    gap: 12,
-    marginTop: 4,
-  },
-
-  jobTypeOption: {
-    backgroundColor: 'white',
-    borderWidth: 1.5,
-    borderColor: '#d1d5db',
-    color: '#3d9c9c',
-    paddingVertical: 8,
-    paddingHorizontal: 16,
-    borderRadius: 12,
-    fontWeight: '300',
-    minWidth: 90,
     justifyContent: 'center',
-    alignItems: 'center',
+    padding: 20,
   },
 
-  jobTypeOptionSelected: {
-    backgroundColor: '#1c6262',
-    borderColor: '#1c6262',
-    color: 'white',
+  // Typography
+  title: {
+    fontFamily: 'Montserrat',
+    fontWeight: 'bold',
+    fontSize: 24,
+    textAlign: 'center',
+    color: '#196262',
   },
-
-  skillsInputWrapper: {
-    borderWidth: 1.5,
-    borderColor: '#d1d5db',
-    borderRadius: 12,
-    paddingVertical: 6,
-    paddingHorizontal: 12,
-    flexDirection: 'row',
-    flexWrap: 'wrap',
-    alignItems: 'center',
-    backgroundColor: 'white',
-  },
-
-  skillsTag: {
-    backgroundColor: '#1c6262',
-    color: 'white',
-    paddingVertical: 4,
-    paddingHorizontal: 12,
-    borderRadius: 999,
+  subText: {
+    marginTop: 10,
+    marginBottom: 30,
     fontSize: 14,
-    flexDirection: 'row',
+    fontWeight: '400',
+    color: '#444',
+  },
+  buttonText: {
+    color: '#FFFFFF',
+    fontWeight: 'bold',
+    textAlign: 'center',
+    fontSize: 14,
+    letterSpacing: 1,
+    
+  },
+
+  // Card
+  card: {
+    backgroundColor: '#fff',
+    padding: 30,
+    borderRadius: 20,
+    shadowColor: '#000',
+    shadowOpacity: 0.1,
+    shadowOffset: { width: 2, height: 2 },
+    shadowRadius: 6,
+    elevation: 4,
+    
     alignItems: 'center',
   },
 
-  salaryRange: {
-    flexDirection: 'row',
-    gap: 12,
+  innerBox: {
+    width: 150,
+    height: 180,
+    backgroundColor: '#a3d9a5',
+    borderRadius: 20,
+    shadowColor: '#000',
+    shadowOffset: { width: 2, height: 4 },
+    shadowOpacity: 0.2,
+    shadowRadius: 6,
+    elevation: 6,
   },
 
-  submitButton: {
-    marginTop: 16,
-    backgroundColor: '#1c6262',
-    color: 'white',
+  // Button
+  button: {
+    borderRadius: 20,
+    borderWidth: 1,
+    borderColor: '#3d9c9c',
+    backgroundColor: '#3d9c9c',
     paddingVertical: 12,
-    paddingHorizontal: 28,
-    borderRadius: 12,
-    fontWeight: '400',
-    fontSize: 20,
-    alignSelf: 'flex-start',
+    paddingHorizontal: 20,
+    marginTop: 10,
+    elevation: 3,
+    width: 150
+  },
+  buttonRow: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    width: '70%',
+    marginTop: 20,
   },
 
-  submitButtonDisabled: {
-    backgroundColor: '#a1a1aa',
+  // TextInput
+  input: {
+    backgroundColor: '#eee',
+    borderRadius: 8,
+    padding: 12,
+    marginVertical: 8,
+    width: 350,
+    borderBottomWidth: 1,
+    borderBottomColor: '#ccc',
   },
+
+  // Header/Footer
+  header: {
+    width: '100%',
+    height: 30,
+    backgroundColor: '#a3d9a5',
+  },
+  footer: {
+    width: '100%',
+    height: 30,
+    backgroundColor: '#a3d9a5',
+  },
+    card1: 
+    {
+    width: 300,
+    height: 180,
+    backgroundColor: '#fffff',
+    borderRadius: 20,
+    margin:30,
+    shadowColor: '#000',
+    shadowOffset: { width: 2, height: 4 },
+    shadowOpacity: 0.2,
+    shadowRadius: 6,
+
+  },
+ container: {
+    flex: 1,
+    backgroundColor: '#b4d9d3', // updated from #f3f2ef
+    alignItems: 'center',
+    justifyContent: 'center',
+    padding: 20,
+  },
+  containerz: {
+    alignItems: 'center',
+    justifyContent: 'center',
+  
+},
+skillzz:
+{
+flexDirection: 'row',
+alignItems: 'center',
+margin: 4,
+backgroundColor: '#f0f0f0',
+paddingHorizontal: 10,
+paddingVertical: 6,
+borderRadius: 20,
+},
+label: {
+  fontWeight: 'bold',
+  marginBottom: 6,
+  marginTop: 15,
+  color: '#3d9c9c'
+}
 });
+
+export default styles;

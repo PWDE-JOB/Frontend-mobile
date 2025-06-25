@@ -13,7 +13,7 @@ import {
   Alert,
 } from 'react-native';
 import * as ImagePicker from 'expo-image-picker';
-import styles from '../styles/Main.styles';
+import styles from '../styles/MoreInfo.styles';
 import { useRouter } from 'expo-router';
 
 const EmployeeInfoForm = () => {
@@ -32,7 +32,7 @@ const EmployeeInfoForm = () => {
     contactNumber: '',
     email: '',
     education: '',
-    experience: '',
+   
     bio: '',
     expectedSalaryMin: '',
     expectedSalaryMax: '',
@@ -80,7 +80,7 @@ const EmployeeInfoForm = () => {
           text: 'Gallery',
           onPress: async () => {
             const result = await ImagePicker.launchImageLibraryAsync({
-              mediaTypes: ImagePicker.MediaTypeOptions.Images,
+              mediaTypes: ImagePicker.MediaType.Images,
               allowsEditing: true,
               quality: 1,
             });
@@ -128,7 +128,7 @@ const EmployeeInfoForm = () => {
       contactNumber: '',
       email: '',
       education: '',
-      experience: '',
+      
       bio: '',
       expectedSalaryMin: '',
       expectedSalaryMax: '',
@@ -148,7 +148,7 @@ const EmployeeInfoForm = () => {
       style={{ flex: 1 }}
       behavior={Platform.OS === 'ios' ? 'padding' : undefined}
     >
-      <ScrollView
+      <ScrollView 
         contentContainerStyle={{ flexGrow: 1, paddingBottom: 40 }}
         keyboardShouldPersistTaps="handled"
       >
@@ -180,7 +180,7 @@ const EmployeeInfoForm = () => {
               { label: 'Contact Number', key: 'contactNumber' },
               { label: 'Email Address', key: 'email' },
               { label: 'Educational Background', key: 'education' },
-              { label: 'Work Experience', key: 'experience' },
+             
             ].map((input) => (
               <View key={input.key}>
                 <Text style={styles.label}>{input.label}</Text>
@@ -204,22 +204,36 @@ const EmployeeInfoForm = () => {
               style={[styles.input, { height: 100, textAlignVertical: 'top' }]}
             />
 
-            {/* PWD ID Uploads */}
-            <Text style={styles.label}>PWD ID (Front)</Text>
-            <TouchableOpacity onPress={() => pickImage(setPwdFront)} style={styles.button}>
-              <Text style={styles.buttonText}>Upload or Take a Photo</Text>
-            </TouchableOpacity>
-            {pwdFront && (
-              <Image source={{ uri: pwdFront }} style={{ width: 100, height: 100, marginTop: 10, borderRadius: 10 }} />
-            )}
+           {/* PWD ID Uploads (Horizontal) */}
+              <Text style={styles.label}>PWD ID (Front and Back)</Text>
+              <View style={{ flexDirection: 'row', justifyContent: 'space-between', gap: 20 }}>
+                {/* Front */}
+                <View style={{ flex: 1, alignItems: 'center' }}>
+                  <TouchableOpacity onPress={() => pickImage(setPwdFront)} style={styles.button}>
+                    <Text style={styles.buttonText}>Front</Text>
+                  </TouchableOpacity>
+                  {pwdFront && (
+                    <Image
+                      source={{ uri: pwdFront }}
+                      style={{ width: 100, height: 100, marginTop: 10, borderRadius: 10 }}
+                    />
+                  )}
+                </View>
 
-            <Text style={styles.label}>PWD ID (Back)</Text>
-            <TouchableOpacity onPress={() => pickImage(setPwdBack)} style={styles.button}>
-              <Text style={styles.buttonText}>Upload or Take a Photo</Text>
-            </TouchableOpacity>
-            {pwdBack && (
-              <Image source={{ uri: pwdBack }} style={{ width: 100, height: 100, marginTop: 10, borderRadius: 10 }} />
-            )}
+                {/* Back */}
+                <View style={{ flex: 1, alignItems: 'center' }}>
+                  <TouchableOpacity onPress={() => pickImage(setPwdBack)} style={styles.button}>
+                    <Text style={styles.buttonText}>Back</Text>
+                  </TouchableOpacity>
+                  {pwdBack && (
+                    <Image
+                      source={{ uri: pwdBack }}
+                      style={{ width: 100, height: 100, marginTop: 10, borderRadius: 10 }}
+                    />
+                  )}
+  </View>
+</View>
+
 
             {/* Disability Type */}
             <Text style={styles.label}>Type of Disability</Text>
@@ -266,7 +280,7 @@ const EmployeeInfoForm = () => {
             <TextInput
               placeholder="Add a skill and press enter"
               onSubmitEditing={handleSkillSubmit}
-              style={[styles.input, { width: '100%' }]}
+              style={[styles.input]}
             />
 
             {/* Submit Button */}
